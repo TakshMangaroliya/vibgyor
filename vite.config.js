@@ -9,6 +9,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ['gsap'], // 👈 mark gsap as external
+      chunkSizeWarningLimit: 3000, 
     },
   },
 });

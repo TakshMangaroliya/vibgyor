@@ -1,7 +1,14 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // <-- This is the fix!
-})
+  base: './',
+  
+  build: {
+    rollupOptions: {
+      external: ['gsap'], // 👈 mark gsap as external
+    },
+  },
+});
